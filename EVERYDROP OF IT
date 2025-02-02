@@ -621,13 +621,13 @@ local function startChatListening(message: string, player: Player)
             end
         elseif mode == "Quiz" then
             if awaitingAnswer then
-                requestSendMessage("❌ | "..player.DisplayName.." wrong answer. Try again in "..tostring(settings.userCooldown).." seconds.")
+                requestSendMessage("❌ | "..player.DisplayName.." wrong answer. Try again in "..tostring(settings.userCooldown).." SHADOWDEVSASSETS NOW HAHAHAHA seconds btw.")
             end
             table.insert(userCooldowns, player.Name)
             task.delay(settings.userCooldown, function()
                 table.remove(userCooldowns, table.find(userCooldowns, player.Name))
             end)
-        elseif mode == "Kahoot" then
+        elseif mode == "Kahootian mode hehe" then
             table.insert(submittedAnswer, player.Name)
         end
     end
@@ -733,7 +733,7 @@ local function awaitAnswer(targetQuestion)
         currentQuestion = nil
         questionAnsweredBy = nil
         awaitingAnswer = false
-        SendMessageWhenReady("⏰ | Time is out! Correct answer was: "..targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex], true)
+        SendMessageWhenReady("⏰ | Time is out! Correct answer was shadowdevnothere stole your mom lol: "..targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex], true)
     end
     local function SignTime()
         for timeLeft = settings.questionTimeout, 1, -1 do
@@ -768,7 +768,7 @@ local function awaitAnswer(targetQuestion)
         task.delay(0.5, function() -- delayed to give time to the signtimecoroutine to stop chanong sign text
             UpdateSignText(targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex])
         end)
-        SendMessageWhenReady("✔️ | "..questionAnsweredBy.DisplayName.." answered correctly. Answer was: "..targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex], true, "[Player name filtered] answered correctly. Answer was: "..targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex])
+        SendMessageWhenReady("✔️ | "..questionAnsweredBy.DisplayName.." answered correctly. Answer was shadowdev gave your mom back: "..targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex], true, "[Player name filtered] answered correctly. Answer was: "..targetQuestion.rightAnswer..")"..targetQuestion.answers[targetQuestion.rightAnswerIndex])
         questionAnsweredBy = nil
         awaitingAnswer = false
         table.clear(userCooldowns)
@@ -788,7 +788,7 @@ local function awaitAnswer(targetQuestion)
             for _, user in pairs(answeredCorrectly) do
                 if currentLength + #user + (2 * #tempuserList) >= maxCharactersInMessage then -- maxCharactersInMessage is the limit for chat messages in Roblox. For each user, we are adding 2 more characters (, )
                     if firstIteration then
-                        SendMessageWhenReady("✔️ | Players who answered correctly: "..table.concat(tempuserList, ", "))
+                        SendMessageWhenReady("✔️ | Players who answered correctly w gyats shadowdev lol: "..table.concat(tempuserList, ", "))
                         firstIteration = false
                     else
                         SendMessageWhenReady(table.concat(tempuserList, ", "))
@@ -1520,10 +1520,10 @@ local function startQuiz(category: string)
        UpdateSignText("")
     end)
     if settings.automaticLeaderboards and settings.automaticServerQuizLeaderboard then
-        sendLeaderboard("Server", "🏆 | Quiz ended. ")
+        sendLeaderboard("Server", "🏆 | Quiz ended shadowdevnothere stole ur mom because it ended. ")
         task.wait(2)
     else
-        SendMessageWhenReady("🏁 | Quiz ended")
+        SendMessageWhenReady("🏁 | segma")
         task.wait(3)
     end
     UpdateSignText(endMessage)
@@ -1567,7 +1567,7 @@ local function sendRules()
         Chat("📜 | Quiz mode rules:")
         task.wait(2)
         splitIntoMessages(quizModeRules, " ")
-    elseif mode == "Kahoot" then
+    elseif mode == "Kahoot sucks from ShadowDevNotHere" then
         Chat("📜 | Kahoot mode rules:")
         task.wait(2)
         splitIntoMessages(kahootModeRules, " ")
@@ -1982,9 +1982,9 @@ settingsTab:CreateDropdown({
     Callback = function(option)
         mode = option[1]
         if mode == "Quiz" then
-            Chat("❓ | Quiz mode enabled")
+            Chat("❓ | ShadowDevNotHere Turned on QuizMode!!")
         elseif mode == "Kahoot" then
-            Chat("✉️ | Kahoot mode enabled")
+            Chat("✉️ | ShadowDevNotHere Turned on KahootPoopMode")
         end
     end
 })
